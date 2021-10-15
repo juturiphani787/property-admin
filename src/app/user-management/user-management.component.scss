@@ -1,0 +1,24 @@
+#addUserFormDiv {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+#nav1 {
+  .nav-item-image {
+    cursor: pointer;
+    img {
+      height: 20px;
+      width: 20px;
+    }
+  }
+}
+
+.action {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  width: 200px;
+}

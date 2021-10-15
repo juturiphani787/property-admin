@@ -1,0 +1,159 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import 'assets/styles/custom.scss';
+@import '~ngx-toastr/toastr';
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-size: 14px;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+.nav {
+  height: 100%;
+  .nav-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .nav-item-image {
+      cursor: pointer;
+      img {
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+}
+
+.btn {
+  padding: 4px 12px;
+  min-width: 80px;
+  border-radius: 4px;
+  font-size: 15px;
+  &:not(.label):hover {
+    box-shadow: 0px 3px 16px #8a8a8a47 !important;
+  }
+  &.btn-rounded {
+    border-radius: 17px !important;
+  }
+  &.btn-outline-primary {
+    color: #0068FF !important;
+    border: 1px solid #0068FF !important;
+    background-color: #DBEAFF !important;
+  }
+  &.btn-outline-info {
+    color: #00BDFF !important;
+    border: 1px solid #00BDFF !important;
+    background-color: #EDFAFF !important;
+  }
+  &.btn-outline-success {
+    color: #00C993 !important;
+    border: 1px solid #00C993 !important;
+    background-color: #E8FFF9 !important;
+  }
+  &.btn-outline-danger {
+    color: #FF4500 !important;
+    border: 1px solid #FF4500 !important;
+    background-color: #FFF3EF !important;
+  }
+  &.btn-outline-dark {
+    color: #000 !important;
+    border: 1px solid #000 !important;
+    background-color: #0000000F !important;
+  }
+}
+
+.dropdown-menu {
+  &.show {
+    animation: fadeIn .4s;
+  }
+}
+
+.slide-right {
+  opacity: 0;
+  left: -100%;
+  transition: opacity .4s, left .4s;
+  &.show {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+.slide-left {
+  opacity: 0;
+  left: 100%;
+  transition: opacity .4s, left .4s;
+  &.show {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #8889;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #5559;
+}
+::-webkit-calendar-picker-indicator {
+    // display: none;
+    // -webkit-appearance: none;
+    padding: 2px;
+    cursor: pointer;
+    background: url('assets/icons/calendar.svg') no-repeat center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

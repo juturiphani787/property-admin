@@ -1,0 +1,85 @@
+<br />
+
+<div style=" background: #f6f8fd; border-radius: 5px; padding: 15px;">
+  <form>
+    <div class="row">
+      <div class="col-2 mt-3">
+        <p>User Information</p>
+      </div>
+
+      <div class="col-2">
+        <label>User Name:</label>
+        <p>{{userData.firstName}} {{userData.lastName}}</p>
+      </div>
+
+      <div class="col-2">
+        <label>Email Id:</label>
+        <p>{{userData.email}}</p>
+      </div>
+
+      <div class="col-2">
+        <label>Mobile Number:</label>
+        <p>{{userData.phone}}</p>
+      </div>
+
+      <div class="col-2">
+        <label>Address:</label>
+        <p>{{userData.address}}</p>
+      </div>
+
+      <div class="col-2">
+        <label>Nationality:</label>
+        <p>{{userData.pincode}}</p>
+      </div>
+
+    </div>
+  </form>
+</div>
+
+<div style=" background: #f6f8fd; border-radius: 5px; padding: 15px; margin-top: 15px;">
+  <div class="row">
+    <div class="col-6 text-left">
+      <p>Room booking list</p>
+    </div>
+    <div class="col-6 text-right">
+
+    </div>
+  </div>
+
+  <table class="table table1 table-striped mt-3">
+    <thead>
+      <tr>
+        <th>Booking Id</th>
+        <!-- <th>Customer Name</th> -->
+        <th>No. of Adult</th>
+        <th>No. of Child</th>
+        <!-- <th>Date</th>
+        <th>Room Number</th> -->
+        <th>Extras</th>
+        <th>Total amount</th>
+        <th>Payment status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let row of userBookings;let i = index">
+        <td>{{row.bookingId}}</td>
+        <!-- <td>Customer Name</td> -->
+        <td>{{row.adult}}</td>
+        <td>{{row.child}}</td>
+        <!-- <td>12/10/2021</td> -->
+        <!-- <td>G - 210</td> -->
+        <td>{{row.extras}}</td>
+        <td>{{row.amount}}</td>
+        <td>{{row.Payment}}</td>
+        <td>
+          <img src="assets/icons/edit.svg" class="icon" />
+          &nbsp;&nbsp;&nbsp;
+          <img src="assets/icons/dropdownArrow.svg" class="icon" />
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>

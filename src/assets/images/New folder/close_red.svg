@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <g id="Icon_ionic-md-close-circle-outline" data-name="Icon ionic-md-close-circle-outline" transform="translate(-3.375 -3.375)">
+    <path id="Path_2947" data-name="Path 2947" d="M11.375,4.99A6.382,6.382,0,1,1,6.86,6.86,6.358,6.358,0,0,1,11.375,4.99m0-1.615a8,8,0,1,0,8,8,8,8,0,0,0-8-8Z" fill="#fd0d1b"/>
+    <path id="Path_2948" data-name="Path 2948" d="M18.982,17.822l-1.16,1.16L14.835,16l-2.987,2.987-1.16-1.16,2.987-2.987-2.987-2.987,1.16-1.16,2.987,2.987,2.987-2.987,1.16,1.16L16,14.835Z" transform="translate(-3.46 -3.46)" fill="#fd0d1b"/>
+  </g>
+</svg>

@@ -1,0 +1,40 @@
+<div class="p-4 h-100">
+  <h5 class="title mb-4">Reports</h5>
+
+  <div class="d-flex" id="mapping__section">
+    <div class="card card-type1 h-100">
+      <div class="card-body">
+        <div [routerLink]="'add'">
+          <div class="d-flex text-lg menu" [ngClass]="{'active':isActiveRoute('add')}">
+            <span class="mr-3">Add mapping</span>
+            <span class="ml-auto align-items-center">
+              <img class="my-auto" src="assets/icons/dropdownArrow.svg" alt="" style="transform: rotate(-90deg); height: 7px">
+            </span>
+          </div>
+        </div>
+        <div [routerLink]="'config'">
+          <div class="d-flex text-lg menu" [ngClass]="{'active':isActiveRoute('config')}">
+            <span class="mr-3">Configure mapping</span>
+            <span class="ml-auto align-items-center">
+              <img class="my-auto" src="assets/icons/dropdownArrow.svg" alt="" style="transform: rotate(-90deg); height: 7px">
+            </span>
+          </div>
+        </div>
+        <div [routerLink]="'view'">
+          <div class="d-flex text-lg menu" [ngClass]="{'active':isActiveRoute('view')}">
+            <span class="mr-3">View mapping</span>
+            <span class="ml-auto align-items-center">
+              <img class="my-auto" src="assets/icons/dropdownArrow.svg" alt="" style="transform: rotate(-90deg); height: 7px">
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-grow-1 ml-3">
+      <!-- <add-mapping> -->
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,127 @@
+<div class="p-4 h-100">
+  <div class="mh-100 card card-type1 flex-grow-1">
+
+    <div class="card-header justify-content-end">
+      <div class="mr-3" style="cursor:pointer" [routerLink]="'/config'">
+        <img src="assets/icons/backBtn.svg" alt="back">
+      </div>
+      <div class="card-title title mb-0 mr-auto">Violation Configurations</div>
+      <!-- <ul class="nav">
+        <li class="nav-item"><img src="assets/icons/expand.svg" alt=""></li>
+        <li class="ml-2 nav-item"><img src="assets/icons/mini.svg" alt=""></li>
+        <li class="ml-2 nav-item"><img src="assets/icons/expand.svg" alt=""></li>
+      </ul> -->
+    </div>
+
+    <div class="card-body">
+      <div class="container">
+        <form>
+          <table class="table table1 mx-auto">
+            <thead>
+              <tr>
+                <th>Violation</th>
+                <th>Duration in seconds</th>
+                <th>Action</th>
+                <th style="width:8rem">Edit/Save</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Left Screen</td>
+                <td>
+                  <div class="justify-content-center d-flex">
+                    <input [disabled]="!voilationConfig.leftScreenEdit" class="form-control mr-3 w-50" type="number" name="leftScreenEdit" [(ngModel)]="voilationConfig.leftScreen">
+                  </div>
+                </td>
+                <td>
+                  <div class="text-left">
+                    <ng-select class="flex-grow-1 mr-3" [items]="actions" [(ngModel)]="voilationConfig.leftScreenAction" name="leftScreenAction" [disabled]="!voilationConfig.leftScreenEdit"></ng-select>
+                  </div>
+                </td>
+                <td>
+                  <button *ngIf="voilationConfig.leftScreenEdit" class="btn btn-success" type="button" name="button" (click)="voilationConfig.leftScreenEdit = false">Save</button>
+                  <button *ngIf="!voilationConfig.leftScreenEdit" class="btn btn-primary" type="button" name="button" (click)="voilationConfig.leftScreenEdit = true">Edit</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Multiple People</td>
+                <td>
+                  <div class="justify-content-center d-flex">
+                    <input [disabled]="!voilationConfig.mobileOrCameraEdit" class="form-control mr-3 w-50" type="number" name="mobileOrCameraEdit" [(ngModel)]="voilationConfig.mobileOrCamera">
+                  </div>
+                </td>
+                <td>
+                  <div class="text-left">
+                    <ng-select class="flex-grow-1 mr-3" [items]="actions" [(ngModel)]="voilationConfig.mobileOrCameraAction" name="mobileOrCameraAction" [disabled]="!voilationConfig.mobileOrCameraEdit"></ng-select>
+                  </div>
+                </td>
+                <td>
+                  <button *ngIf="voilationConfig.mobileOrCameraEdit" class="btn btn-success" type="button" name="button" (click)="voilationConfig.mobileOrCameraEdit = false">Save</button>
+                  <button *ngIf="!voilationConfig.mobileOrCameraEdit" class="btn btn-primary" type="button" name="button" (click)="voilationConfig.mobileOrCameraEdit = true">Edit</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Mobile / Camera</td>
+                <td>
+                  <div class="justify-content-center d-flex">
+                    <input [disabled]="!voilationConfig.eatingOrDrinkingEdit" class="form-control mr-3 w-50" type="number" name="eatingOrDrinkingEdit" [(ngModel)]="voilationConfig.eatingOrDrinking">
+                  </div>
+                </td>
+                <td>
+                  <div class="text-left">
+                    <ng-select class="flex-grow-1 mr-3" [items]="actions" [(ngModel)]="voilationConfig.eatingOrDrinkingAction" name="eatingOrDrinkingAction" [disabled]="!voilationConfig.eatingOrDrinkingEdit"></ng-select>
+                  </div>
+                </td>
+                <td>
+                  <button *ngIf="voilationConfig.eatingOrDrinkingEdit" class="btn btn-success" type="button" name="button" (click)="voilationConfig.eatingOrDrinkingEdit = false">Save</button>
+                  <button *ngIf="!voilationConfig.eatingOrDrinkingEdit" class="btn btn-primary" type="button" name="button" (click)="voilationConfig.eatingOrDrinkingEdit = true">Edit</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Eating / Drinking</td>
+                <td>
+                  <div class="justify-content-center d-flex">
+                    <input [disabled]="!voilationConfig.imposterEdit" class="form-control mr-3 w-50" type="number" name="imposterEdit" [(ngModel)]="voilationConfig.imposter">
+                  </div>
+                </td>
+                <td>
+                  <div class="text-left">
+                    <ng-select class="flex-grow-1 mr-3" [items]="actions" [(ngModel)]="voilationConfig.imposterAction" name="imposterAction" [disabled]="!voilationConfig.imposterEdit"></ng-select>
+                  </div>
+                </td>
+                <td>
+                  <button *ngIf="voilationConfig.imposterEdit" class="btn btn-success" type="button" name="button" (click)="voilationConfig.imposterEdit = false">Save</button>
+                  <button *ngIf="!voilationConfig.imposterEdit" class="btn btn-primary" type="button" name="button" (click)="voilationConfig.imposterEdit = true">Edit</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Imposter</td>
+                <td>
+                  <div class="justify-content-center d-flex">
+                    <input [disabled]="!voilationConfig.multiplePeopleEdit" class="form-control mr-3 w-50" type="number" name="multiplePeopleEdit" [(ngModel)]="voilationConfig.multiplePeople">
+                  </div>
+                </td>
+                <td>
+                  <div class="text-left">
+                    <ng-select class="flex-grow-1 mr-3" [items]="actions" [(ngModel)]="voilationConfig.multiplePeopleAction" name="multiplePeopleAction" [disabled]="!voilationConfig.multiplePeopleEdit"></ng-select>
+                  </div>
+                </td>
+                <td>
+                  <button *ngIf="voilationConfig.multiplePeopleEdit" class="btn btn-success" type="button" name="button" (click)="voilationConfig.multiplePeopleEdit = false">Save</button>
+                  <button *ngIf="!voilationConfig.multiplePeopleEdit" class="btn btn-primary" type="button" name="button" (click)="voilationConfig.multiplePeopleEdit = true">Edit</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+
+    <!-- <div class="card-footer">
+      <div class="ml-auto">
+        <button class="btn btn-light mr-4" type="button" name="button">Cancel</button>
+        <button class="btn btn-primary" type="button" name="button">Save</button>
+      </div>
+    </div> -->
+  </div>
+</div>

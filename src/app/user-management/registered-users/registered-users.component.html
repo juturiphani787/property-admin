@@ -1,0 +1,29 @@
+<br/>
+<div *ngIf="showViewUser" class="text-right">
+  <a (click)="viewUser('')" type="button" class="btn btn-dark">Back</a>
+</div>
+
+<app-view-user *ngIf="showViewUser" [userData]='userData'></app-view-user>
+
+<table class="table table1 table-striped m-0" *ngIf="!showViewUser">
+  <thead>
+    <tr>
+      <th>User Name</th>
+      <th>Email Id</th>
+      <th>Phone Number</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of registerUsersList;let i = index">
+      <td><a (click)="viewUser(row)">{{row.firstName}}</a></td>
+      <td>{{row.email}}</td>
+      <td>{{row.phone}}</td>
+      <td>
+        <img src="assets/icons/edit.svg" class="icon" (click)="editProperty(row)" />
+        &nbsp;&nbsp;&nbsp;
+        <img src="assets/icons/dropdownArrow.svg" class="icon" />
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,31 @@
+<div class="h-100 page">
+  <div class="h-100 card card-type1">
+
+    <div class="row card-header">
+      <div class="col-md-6">
+        <div class="card-title title mb-0">Admin Management</div>
+      </div>
+
+      <div class="col-md-6 text-right">
+        <a routerLink='../add-role' type="button" class="btn btn-dark" *ngIf="showAddRoleBtn">Add Role</a>
+        <a routerLink='../add-role' type="button" class="btn btn-dark" *ngIf="showAddAdminBtn">Add Admin</a>
+      </div>
+    </div>
+
+
+    <!-- <div class="card-header">
+      <div class="card-title title mb-0">Property Management</div>
+    </div> -->
+
+    <div class="card-body">
+      <tabset>
+        <tab heading="Role Permissions" id="tab1"  (selectTab)="changeTab($event,1)">
+          <app-role-permission-list></app-role-permission-list>
+        </tab>
+        <tab heading="Admin's"  (selectTab)="changeTab($event,2)">
+          <!-- <app-admin-users></app-admin-users> -->
+        </tab>
+      </tabset>
+    </div>
+    </div>
+</div>

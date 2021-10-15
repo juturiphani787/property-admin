@@ -1,0 +1,68 @@
+<div class="mat-dialog-header">
+  <div class="float-right" (click)="close()">
+    <i class="fa fa-times-circle"></i>
+  </div>
+  <h4 mat-dialog-title class="mb-0">Additional Informations</h4>
+</div>
+
+<div mat-dialog-content class="mat-dialog-content h-100 overflow-hidden">
+  <div class="mb-4">
+    <h5 class="mb-4">Customer Name - {{data.customerName}}  </h5>
+    <div class="row mb-3">
+      <div class="col-6"> Email</div>
+      <div class="col-6">{{data.email}}</div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-6">Handling Time (Chat)</div>
+      <div class="col-6">
+        <span>{{chatDuration || '00:00:00'}}</span>
+        <span></span>
+      </div>
+    </div>
+    <div *ngIf="data.chatType == 'VideoChat'" class="row mb-3">
+      <div class="col-6">Handling Time (Video)</div>
+      <div class="col-6">
+        <span>{{videoDuration || '00:00:00'}}</span>
+        <span></span>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-6"> Hold time</div>
+      <div class="col-6">{{'--'}}</div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-6">Disconnected By</div>
+      <div class="col-6">{{data.disconnectedBy || '--'}}</div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-6">Wrap-up Code</div>
+      <div class="col-6">{{data.acw[0]?.option || '--'}}</div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-6">Wrap-up Notes </div>
+      <div class="col-6">{{data.acw[0]?.textare || '--'}}</div>
+    </div>
+  </div>
+  <div class="">
+    <h5 *ngIf="data.customerReview || data.rattings" class="">Customer Review</h5>
+    <div class="row">
+      <div *ngIf="data.rattings" class="rating">
+        <input type="radio" id="star5" name="rate" [(ngModel)]="data.rattings" value="5" />
+        <label for="star5" title="text"></label>
+        <input type="radio" id="star4" name="rate" [(ngModel)]="data.rattings" value="4" />
+        <label for="star4" title="text"></label>
+        <input type="radio" id="star3" name="rate" [(ngModel)]="data.rattings" value="3" />
+        <label for="star3" title="text"></label>
+        <input type="radio" id="star2" name="rate" [(ngModel)]="data.rattings" value="2" />
+        <label for="star2" title="text"></label>
+        <input type="radio" id="star1" name="rate" [(ngModel)]="data.rattings" value="1" />
+        <label for="star1" title="text"></label>
+      </div>
+    </div>
+    <div *ngIf="data.customerReview" class="row">
+      <div class="col">
+        <i id="review"></i>
+      </div>
+    </div>
+  </div>
+</div>

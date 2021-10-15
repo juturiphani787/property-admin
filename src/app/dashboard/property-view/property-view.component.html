@@ -1,0 +1,91 @@
+<div class="card-body">
+
+<!-- 
+  <div style="border: 1px solid black; box-shadow: inset; border-radius: 5px; margin-bottom: 15px;">
+
+    <div class="row">
+      <div col-6>
+        <p style="margin-top: 10px; margin-left: 30px;">Thumbnail Image</p>
+      </div>
+      <div col-6>
+        <button type="button" class="btn btn-dark mt-2">Upload</button>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="row" style="border: 1px solid #ccc; box-shadow: inset; border-radius: 5px; margin-bottom: 15px;">
+    <div class="col-md-6 p-2 mt-1">
+      <p>Thumbnail Image</p>
+    </div>
+
+    <div class="col-md-6 text-right p-2">
+      <input type="file" class="btn btn-dark" style="width: 95px;padding: 3px;" [(ngModel)]="thumbnailImage" (change)="fileChange($event,1)"/>
+      <!-- <button type="button" class="btn btn-dark">Upload</button> -->
+    </div>
+
+    <div class="col-12" *ngIf="property && property.thumbImages">
+      <div class="row">
+        <div *ngFor="let img of property.thumbImages;let i = index;" style="margin:10px;display: inline-block;">
+          <div class="imageClose">X</div>
+          <img src="{{filePath + '/' + img.filename}}" class="img-thumbnail" style="width:150px;height:150px;"/>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row" style="border: 1px solid #ccc; box-shadow: inset; border-radius: 5px; margin-bottom: 15px;">
+    <div class="col-md-6 p-2 mt-1">
+      <p>Property Image</p>
+    </div>
+
+    <div class="col-md-6 text-right p-2">
+      <input type="file" class="btn btn-dark" style="width: 95px;padding: 3px;" [(ngModel)]="propertyImage" (change)="fileChange($event,2)"/>
+    </div>
+    <div class="col-12" *ngIf="property && property.propertyImages">
+      <div class="row">
+        <div *ngFor="let img of property.propertyImages;let i = index;" style="margin:10px;display: inline-block;">
+          <div class="imageClose">X</div>
+          <img src="{{filePath + '/' + img.filename}}" class="img-thumbnail" style="width:150px;height:150px;"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="border: 1px solid #ccc; box-shadow: inset; border-radius: 5px; margin-bottom: 15px;">
+    <div class="col-md-6 p-2 mt-1">
+      <p>Videos</p>
+    </div>
+
+    <div class="col-md-6 text-right p-2">
+      <input type="file" class="btn btn-dark" style="width: 95px;padding: 3px;" [(ngModel)]="videos" (change)="fileChange($event,3)"/>
+    </div>
+    <div class="col-12" *ngIf="property && property.videos">
+      <div class="row">
+        <div *ngFor="let img of property.videos;let i = index;" style="margin:10px;display: inline-block;">
+          <div class="imageClose">X</div>
+          <img src="{{filePath + '/' + img.filename}}" class="img-thumbnail" style="width:150px;height:150px;"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="border: 1px solid #ccc; box-shadow: inset; border-radius: 5px; margin-bottom: 15px;">
+    <div class="col-md-6 p-2 mt-1">
+      <p>360 degrees</p>
+    </div>
+
+    <div class="col-md-6 text-right p-2">
+      <input type="file" class="btn btn-dark" style="width: 95px;padding: 3px;" [(ngModel)]="images350" (change)="fileChange($event,4)"/>
+    </div>
+    <div class="col-12" *ngIf="property && property.images350">
+      <div class="row">
+        <div *ngFor="let img of property.images350;let i = index;" style="margin:10px;display: inline-block;">
+          <div class="imageClose">X</div>
+          <img src="{{filePath + '/' + img.filename}}" class="img-thumbnail" style="width:150px;height:150px;"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

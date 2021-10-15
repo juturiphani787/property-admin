@@ -1,0 +1,56 @@
+#sidebar {
+  background-color: #000000;
+  // padding-top: 100px;
+  .nav-item {
+    height: 48px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    position: relative;
+    border-radius: 5px;
+    transition: background-color .4s;
+    span {
+      animation: fadeIn .4s;
+      -webkit-animation: fadeIn .4s;
+      -moz-animation: fadeIn .4s;
+      -o-animation: fadeIn .4s;
+      -ms-animation: fadeIn .4s;
+      display: none;
+    }
+    &.active {
+      background-color: #F9FAFD;
+      z-index: 0;
+      img {
+        filter: brightness(0.6) sepia(1) hue-rotate(194deg) saturate(47);
+      }
+      span {
+        display: block !important;
+        top: -20px;
+        height: 88px;
+        width: 20px;
+        right: -14px;
+        position: absolute;
+        background-color: #F9FAFD;
+        &:before {
+          content: "";
+          position: absolute;
+          height: 20px;
+          width: 100%;
+          background: black;
+          border-bottom-right-radius: 20px;
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          height: 20px;
+          width: 100%;
+          background: black;
+          border-top-right-radius: 20px;
+        }
+      }
+    }
+  }
+}

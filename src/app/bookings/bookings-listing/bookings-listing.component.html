@@ -1,0 +1,64 @@
+<br />
+
+
+<table class="table table1 table-striped m-0">
+  <thead>
+    <tr>
+      <th>Booking Name</th>
+      <th>Customer</th>
+      <th>Start - End Date</th>
+      <th>Created Date</th>
+      <th>Phone Number</th>
+      <th>Payment Status</th>
+      <th>Total Amount</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of bookings;">
+      <td>
+        <div>{{row.property.propertyDetails.propertyName}}</div>
+        <div class="small">{{row.room.roomDetails.roomType}} {{row.room.roomDetails.roomBeds}} Beds</div>
+      </td>
+
+      <td>
+        <div>{{row.user.firstName}} {{row.user.lastName}}</div>
+        <div class="small">{{row.user.email}}</div>
+      </td>
+
+      <td>
+        <div class="row">
+          <div class="col-6">
+            <div>{{row.bookingData.startDate}}</div>
+            <div class="small">{{row.bookingData.startTime}}</div>
+          </div>
+          <div class="col-6">
+            <div>{{row.bookingData.endDate}}</div>
+            <div class="small">{{row.bookingData.endTime}}</div>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div>{{row.bookingData.createdOn | date:'shortDate'}}</div>
+        <div class="small">{{row.bookingData.createdOn | date:'shortTime'}}</div>
+      </td>
+
+      <td>
+        <div>{{row.user.phone}}</div>
+      </td>
+
+      <td>
+        <div>{{row.bookingData.payment}}</div>
+      </td>
+
+      <td>
+        <div>${{row.bookingData.amount}}</div>
+      </td>
+
+      <td>
+        <img src="assets/icons/edit.svg" class="icon" (click)="editBooking(row)"/>
+      </td>
+        
+    </tr>
+  </tbody>
+</table>

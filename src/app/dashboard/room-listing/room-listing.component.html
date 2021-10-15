@@ -1,0 +1,34 @@
+<div class="p-4 h-100 page">
+  <div class="h-100 card card-type1">
+    <div class="row card-header">
+      <div class="col-md-6">
+        <div class="card-title title mb-0">Room Listing</div>
+      </div>
+      <div class="col-md-6 text-right">
+        <a routerLink='../add-room' type="button" class="btn btn-dark">Add Room</a>
+      </div>
+    </div>
+    <table class="table table1 table-striped m-0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Rent</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of listRooms;let i = index">
+          <td>{{row.roomDetails.roomName}}</td>
+          <td>{{row.roomDetails.roomType}}</td>
+          <td>{{row.roomDetails.rent}}</td>
+          <td></td>
+          <td>
+            <img src="assets/icons/edit.svg" class="icon" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

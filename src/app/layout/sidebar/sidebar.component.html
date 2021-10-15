@@ -1,0 +1,8 @@
+<div class="h-100" id="sidebar">
+  <ul class="nav flex-column justify-content-center pb-3">
+    <li *ngFor="let item of menuItems" class="nav-item p-2 mx-3" [ngClass]="{'active' : isMenuItemActive(item.url)}" (click)="navigateTo(item.url)">
+      <span></span>
+      <img class="nav-item-image" [src]="item.icon" alt="">
+    </li>
+  </ul>
+</div>

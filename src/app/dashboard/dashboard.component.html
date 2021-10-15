@@ -1,0 +1,33 @@
+<div class="p-4 h-100 page">
+  <div class="h-100 card card-type1">
+
+    <div class="row card-header">
+      <div class="col-md-6">
+        <div class="card-title title mb-0">Property Management</div>
+      </div>
+
+      <div class="col-md-6 text-right">
+        <a routerLink='add-property' type="button" class="btn btn-dark">Add property</a>
+      </div>
+    </div>
+
+
+    <!-- <div class="card-header">
+      <div class="card-title title mb-0">Property Management</div>
+    </div> -->
+
+    <div class="card-body">
+      <tabset>
+        <tab heading="All Listing" (selectTab)="changeTab($event)">
+          <all-listing></all-listing>
+        </tab>
+        <tab heading="Active Property" (selectTab)="changeTab($event)">
+          <all-listing></all-listing>
+        </tab>
+        <tab heading="Inactive Property" (selectTab)="changeTab($event)">
+          <all-listing></all-listing>
+        </tab>
+      </tabset>
+    </div>
+    </div>
+</div>

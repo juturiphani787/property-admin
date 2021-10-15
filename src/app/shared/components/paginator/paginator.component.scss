@@ -1,0 +1,19 @@
+.paginator {
+  height: 24px;
+  margin-top: .25rem;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 101px;
+  .icon {
+    cursor: pointer;
+    color: #0068FF;
+    &.disabled {
+      color: #59749B;
+    }
+  }
+  i {
+    font-size: x-small;
+  }
+}

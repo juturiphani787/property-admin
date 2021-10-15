@@ -1,0 +1,19 @@
+#mapping__section {
+  height: calc(100% - 26px - 1.5rem);
+}
+
+.menu {
+  padding: 6px;
+  border-radius: 4px;
+  color: #93A4BC;
+  cursor: pointer;
+  transition: color .4s, background-color .4s;
+  &.active {
+    background-color: #E3EFFF;
+    color: #0068FF;
+    font-weight: bold;
+    img {
+      filter: brightness(0.6) sepia(1) hue-rotate(194deg) saturate(47);
+    }
+  }
+}

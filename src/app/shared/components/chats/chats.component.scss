@@ -1,0 +1,50 @@
+#message-area {
+  max-height: 400px;
+  overflow: auto;
+  background-color: #0000001f !important;
+  .userImg {
+    box-shadow: 4px 4px 18px #0000002b;
+  }
+}
+
+.userImg {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.message {
+  box-shadow: 4px 4px 18px #0000001b;
+  background-color: #fff;
+  border-bottom-left-radius: .8rem;
+  border-bottom-right-radius: .8rem;
+  border-top-right-radius: .8rem;
+  .file {
+    height: 40px;
+    width: 200px;
+    border-radius: 6px;
+    background: #00000012;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    img {
+      height: 24px !important
+    }
+  }
+  .image, .video {
+    max-width: 100%;
+    max-height: 200px;
+  }
+  .download-icon {
+    display: none;
+    bottom: 0;
+    right: 0;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 12px black;
+    cursor: pointer;
+  }
+  .image:hover + .download-icon, .download-icon:hover {
+    display: block;
+  }
+}

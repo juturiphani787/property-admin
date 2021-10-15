@@ -1,0 +1,11 @@
+<div class="paginator">
+  <div class="mb-1 mr-2 icon" (click)="onPageChange((page-1))" [ngClass]="{'disabled': page == 1 }">
+    <i class="fa  fa-chevron-left"></i>
+  </div>
+  <div class="mr-2">
+    <span>{{ total > 0 ? (page-1)*count+1 : 0}}</span> - <span>{{ (page*count > total ? total: page*count) || 0 }}</span> of <span>{{ total || 0 }}</span>
+  </div>
+  <div class="mb-1 icon" (click)="onPageChange((page+1))" [ngClass]="{'disabled': (page*count >= total )}">
+    <i class="fa  fa-chevron-right"></i>
+  </div>
+</div>

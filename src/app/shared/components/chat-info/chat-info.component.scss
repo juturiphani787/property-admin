@@ -1,0 +1,27 @@
+.rating {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  input {
+    appearance: none;
+    border: none;
+  }
+  label {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    position: relative;
+    margin-bottom: 0;
+    color: #0006;
+    &::before {
+      content: "★";
+      cursor: pointer;
+      font-size:2rem;
+    }
+  }
+  label:hover ~ label, label:hover {
+     color: #dcbd41;
+  }
+  input:checked ~ label {
+    color: #eab702;
+  }
+}

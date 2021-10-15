@@ -1,0 +1,30 @@
+<div class="p-4 h-100 page">
+  <div class="h-100 card card-type1">
+
+    <div class="row card-header">
+      <div class="col-md-6">
+        <div class="card-title title mb-0">Bookings</div>
+      </div>
+
+      <div class="col-md-6 text-right">
+        &nbsp;
+        <a routerLink='/bookings' type="button" class="btn btn-warning">Back</a>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <h6>
+        {{booking.property.propertyDetails.propertyName}},
+        {{booking.room.roomDetails.roomType}}
+      </h6>
+      <hr />
+
+      <div class="row">
+        <div class="col-4">
+          <img src="#" class="img-thumbnail" style="width:150px;height:150px;">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

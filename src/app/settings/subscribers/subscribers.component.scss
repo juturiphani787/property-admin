@@ -1,0 +1,57 @@
+.card-header {
+  background-color: #fff;
+  .btn-group-toggle {
+    border-radius: 3px;
+    z-index: 0;
+    label {
+      border: 1px solid #b4b4b4;
+      height: 1.8rem;
+      min-width: 2rem !important;
+      padding: .2rem !important;
+      img {
+        height: 1.2rem;
+        margin-bottom: .2rem;
+      }
+      &:not(.active) img {
+        filter: sepia(20%) hue-rotate(315deg) saturate(0%) brightness(1.7);
+      }
+      &.active {
+        border: 1px solid #007bff;
+      }
+    }
+  }
+
+  .form-control {
+    width: 10rem;
+  }
+
+  .nav {
+    li {
+      cursor: pointer;
+      img {
+        height: 2rem;
+        width: auto;
+        border-radius: 50%;
+        &:hover {
+          background-color: #0005;
+        }
+      }
+    }
+  }
+}
+
+.violation-proof {
+  height: 4rem;
+  img {
+    height: 100%;
+  }
+}
+
+.section {
+  height: calc(100% - 26px - 1.5rem);
+}
+
+.dropdown-menu {
+  width: 200px;
+  left: -170px !important;
+}

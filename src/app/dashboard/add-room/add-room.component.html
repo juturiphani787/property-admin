@@ -1,0 +1,33 @@
+<div class="p-4 h-100 page">
+  <div class="h-100 card card-type1">
+
+    <div class="row card-header">
+      <div class="col-md-6">
+        <div class="card-title title mb-0">Add Room</div>
+      </div>
+
+      <div class="col-md-6 text-right">
+        <button type="button" class="btn btn-light">Reset</button>
+        &nbsp;
+        <button type="button" class="btn btn-dark" (click)="addRoom()">Save</button>
+        &nbsp;
+        <a (click)="gotoAddProperty()" type="button" class="btn btn-warning">Back</a>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <tabset>
+        <tab heading="Room Details">
+          <app-room-details></app-room-details>
+        </tab>
+        <tab heading="Room View">
+          <app-room-view></app-room-view>
+        </tab>
+        <!-- <tab heading="Room features">
+          <app-room-features></app-room-features>
+        </tab> -->
+      </tabset>
+    </div>
+    </div>
+</div>
+

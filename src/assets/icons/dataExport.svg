@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20">
+  <g id="MDI_table-arrow-right" data-name="MDI / table-arrow-right" transform="translate(-2 -3)">
+    <path id="Path_table-arrow-right" data-name="Path / table-arrow-right" d="M4.153,3H19.221a2.188,2.188,0,0,1,2.153,2.222v7.867a6.307,6.307,0,0,0-4.65,1.022H12.763v4.444h1.162a7,7,0,0,0,0,2.222H4.153A2.188,2.188,0,0,1,2,18.556V5.222A2.195,2.195,0,0,1,4.153,3m0,4.444v4.444h6.458V7.444H4.153m8.611,0v4.444h6.458V7.444H12.763M4.153,14.111v4.444h6.458V14.111H4.153M20.771,23V20.778H16.466V18.556h4.305V16.333L24,19.667,20.771,23" transform="translate(0 0)" fill="#161616"/>
+  </g>
+</svg>

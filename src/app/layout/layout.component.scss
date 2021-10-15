@@ -1,0 +1,35 @@
+#headerDiv, #sidebarDiv, #containerDiv {
+  position: absolute;
+}
+
+#headerDiv  {
+  height: 64px;
+  width: calc(100% - 80px);
+  margin-left: 80px;
+  background-color: #000;
+}
+
+#sidebarDiv {
+  width: 80px;
+  min-height: 100%;
+  height: 100%;
+}
+
+#footerDiv {
+  height: 48px;
+  width: calc(100% - 80px);
+  margin-left: 80px;
+  background-color: #000;
+  position: absolute;
+  bottom: 0;
+}
+
+#containerDiv {
+  background-color: #F9FAFD;
+  margin-left: 80px;
+  margin-top: 64px;
+  width: calc(100% - 80px);
+  height: calc(100% - 112px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}

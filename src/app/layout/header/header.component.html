@@ -1,0 +1,41 @@
+<nav class="navbar justify-content-between bg-white h-100 p-0" id="header">
+  <a class="navbar-brand pl-5" href="#">
+    <img class="mb-1" src="assets/logo/logo.png" alt="zuqo_logo">
+    <span style="color: rgb(20, 19, 19); font-weight: 700;">BUENBYAHE</span>
+  </a>
+  <ul class="nav">
+    <li class="nav-item px-2">
+      <div class="nav-item-image">
+        <img src="assets/icons/notification.svg" alt="">
+      </div>
+    </li>
+    <li class="nav-item dropdown px-2">
+      <div class="d-flex align-items-center p-2" id="profileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="user-image-wrapper mr-3">
+          <img class="user-image" src="assets/images/user.png" alt="">
+        </div>
+
+        <div class="text-center mr-3">
+          <div class="font-weight-bold">David Miller </div>
+          <span class="font-weight-bold text-primary">1234</span>
+        </div>
+        <img class="icon" src="assets/icons/dropdownArrow.svg" alt="">
+      </div>
+
+      <div class="dropdown-menu" aria-labelledby="profileDropdown">
+        <a class="dropdown-item pointer" (click)="logout()">Logout</a>
+      </div>
+
+      <!-- <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown button
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div> -->
+    </li>
+  </ul>
+</nav>

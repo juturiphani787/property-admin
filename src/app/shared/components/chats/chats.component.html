@@ -1,0 +1,53 @@
+<div class="mat-dialog-header">
+  <div class="float-right" (click)="close()">
+    <i class="fa fa-times-circle"></i>
+  </div>
+  <h4 mat-dialog-title class="mb-0">Conversation</h4>
+</div>
+
+<div mat-dialog-content class="mat-dialog-content h-100 overflow-hidden">
+  <div class="p-3" id="message-area">
+    <div *ngFor="let message of data.chats; index as i">
+      <div class="d-inline-flex mb-4">
+        <img [src]="message.profile" alt="" class="userImg mr-2">
+        <div class="message px-2 py-1">
+          <div><small class="font-weight-bold" [ngClass]="(message.userId == '13')? 'text-success': 'text-info'">{{(message.userId == '13')? data?.customerName: message.user}}</small></div>
+
+          <div *ngIf="message.file && (!message.file?.type?.includes('image/') && !message.file?.type?.includes('video/') && !message.file?.type?.includes('audio/'))"
+          class="file px-3 mb-2" (click)="download(message.file?.url, message.file?.name)">
+            <img *ngIf="message.file?.type?.includes('text/plain')" src="assets/icons/textfile.svg" class="mr-3" alt="file">
+            <img *ngIf="message.file?.type?.includes('sheet') || message.file?.type?.includes('excel')" src="assets/icons/excel.svg" class="mr-3" alt="file">
+            <img *ngIf="message.file?.type?.includes('word')" src="assets/icons/word.svg" class="mr-3" alt="file">
+            <img *ngIf="message.file?.type?.includes('pdf')" src="assets/icons/pdf.svg" class="mr-3" alt="file">
+            <img *ngIf="message.file?.type?.includes('zip')" src="assets/icons/zip.svg" class="mr-3" alt="file">
+            <small class="overflow-hidden text-nowrap text-truncate mr-auto" title="{{message.file?.name}}">{{message.file?.name}}</small>
+            <i class="fa fa-download text-xl ml-3" style="cursor:pointer"></i>
+          </div>
+
+          <video *ngIf="message.file?.type?.includes('video/')" class="video" [src]="message.file?.url" controls></video>
+
+          <div *ngIf="message.file?.type?.includes('audio/')" class="audio-with-controls">
+            <audio [src]="message.file?.url" #audio id="audio{{i}}" controls></audio>
+            <div class="overflow-hidden text-nowrap text-truncate">
+              <small class="text-info">{{message.file?.name}}</small>
+            </div>
+          </div>
+
+          <div *ngIf="message.file?.type?.includes('image/')" class="position-relative">
+            <img [src]="message.file?.url" class="image pointer mb-2" (click)="viewImageUrl = message.file?.url" alt="" (load)="message.file.loaded = true" [hidden]="!message.file.loaded">
+            <i class="fa fa-download ml-3 text-xl position-absolute p-1 download-icon" (click)="download(message.file?.url, message.file?.name)"></i>
+          </div>
+
+          <div class="">{{message.message}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div [ngClass]="{'show':viewImageUrl}" class="view-image">
+  <div class="float-right" (click)="viewImageUrl = ''">
+    <i class="fa fa-times text-lg text-light"></i>
+  </div>
+  <img [src]="viewImageUrl" alt="">
+</div>

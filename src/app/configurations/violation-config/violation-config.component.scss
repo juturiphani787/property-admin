@@ -1,0 +1,21 @@
+input.form-control {
+  max-width: 6rem;
+}
+
+.label {
+  width: 6rem;
+}
+
+table {
+  max-width: 900px;
+  min-width: 500px;
+  table-layout: fixed;
+}
+
+.ng-select-container {
+  width: 20rem;
+}
+
+.card, .card-body {
+  overflow: visible;
+}

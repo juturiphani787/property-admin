@@ -1,0 +1,42 @@
+#header {
+  border-top-left-radius: 40px;
+  z-index: 1;
+  box-shadow: 10px 3px 16px #e8eeffe2;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item-image {
+  height: 40px;
+}
+
+.user-image-wrapper {
+  padding: 1px;
+  height: 40px;
+  width: 40px;
+  border: 1px solid #0068FF;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .user-image {
+    height: 34px;
+    width: 34px;
+    border-radius: 17px;
+  }
+}
+
+#profileDropdown {
+  cursor: pointer;
+  border-radius: 6px;
+  &:hover {
+    background: #c2c3c733;
+  }
+  .icon {
+    height: 8px;
+    width: 14px;
+  }
+}

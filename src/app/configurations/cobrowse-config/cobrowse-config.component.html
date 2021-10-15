@@ -1,0 +1,78 @@
+<div class="p-4 h-100">
+  <div class="h-100 card card-type1 flex-grow-1">
+
+    <div class="card-header justify-content-end">
+      <div class="mr-3" style="cursor:pointer" [routerLink]="'/config'">
+        <img src="assets/icons/backBtn.svg" alt="back">
+      </div>
+      <div class="card-title title mb-0 mr-auto">Co-Browse Configurations</div>
+      <!-- <ul class="nav">
+        <li class="nav-item"><img src="assets/icons/expand.svg" alt=""></li>
+        <li class="ml-2 nav-item"><img src="assets/icons/mini.svg" alt=""></li>
+        <li class="ml-2 nav-item"><img src="assets/icons/expand.svg" alt=""></li>
+      </ul> -->
+    </div>
+
+    <div class="card-body">
+      <div class="container-fluid mx-auto pt-3">
+        <form #cobrowseConfigForm="ngForm">
+          <table class="table table1" *ngIf="websites && websites.length">
+            <thead>
+              <tr>
+                <th>Website Name
+                  <i class="fa fa-info-circle pointer ml-2" tooltip="name info" placement="bottom"></i>
+                </th>
+                <th>Website URL
+                  <i class="fa fa-info-circle pointer ml-2" tooltip="url info" placement="bottom"></i>
+                </th>
+                <th>Class Names
+                  <i class="fa fa-info-circle pointer ml-2" tooltip="class name info ADADA
+                  DADAD SAFSGFSFS sfsfsfs fsfs fs fs " placement="bottom" aria-describedby="tooltip-2"></i>
+                </th>
+                <th>IDs
+                  <i class="fa fa-info-circle pointer ml-2" tooltip="id info" placement="bottom"></i>
+                </th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let site of websites; index as i">
+                <td>
+                  <div class="">
+                    <input [disabled]="!site.edit" class="form-control mr-3" type="text" name="name{{i}}" [(ngModel)]="site.name">
+                  </div>
+                </td>
+                <td>
+                  <div class="">
+                    <input [disabled]="!site.edit" class="form-control mr-3" type="text" name="url{{i}}" [(ngModel)]="site.url" pattern="(http|https):\/\/(www\.)?[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,5}.*" required #url="ngModel">
+                    <small *ngIf="url.dirty && url.errors?.pattern" class="text-danger">Enter a valid url</small>
+                  </div>
+                </td>
+                <td>
+                  <div class="">
+                    <input [disabled]="!site.edit" class="form-control mr-3" type="text" name="classes{{i}}" [(ngModel)]="site.classes">
+                  </div>
+                </td>
+                <td>
+                  <div class="">
+                    <input [disabled]="!site.edit" class="form-control mr-3" type="text" name="ids{{i}}"  [(ngModel)]="site.ids">
+                  </div>
+                </td>
+                <td>
+                  <div class="d-flex justify-content-center">
+                    <button *ngIf="site.edit" class="btn btn-success" type="button" name="button" (click)="saveSite(cobrowseConfigForm, site)">Save</button>
+                    <button *ngIf="!site.edit" class="btn btn-primary action-btn" type="button" name="button" (click)="site.edit = true"><i class="fa fa-edit"></i></button>
+                    <button *ngIf="!site.edit" class="btn btn-danger action-btn ml-3" type="button" name="button" (click)="deleteWebsite(i)"><i class="fa fa-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="text-center">
+            <button class="btn btn-primary" type="button" name="button" (click)="addNewWebsite()">Add New Website</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

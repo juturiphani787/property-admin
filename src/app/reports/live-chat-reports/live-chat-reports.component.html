@@ -1,0 +1,100 @@
+<div class="h-100 card card-type1">
+
+  <div class="card-header justify-content-end">
+    <app-paginator class="mr-auto" [(page)]="pagination.page" [count]="pagination.count" [total]="pagination.total"></app-paginator>
+    <!-- <div class="mr-auto" style="cursor:pointer" [routerLink]="'/reports'">
+      <img src="assets/icons/backBtn.svg" alt="back">
+    </div> -->
+    <!-- <div class="card-title title mb-0 mr-auto">Agents Violation Report</div> -->
+    <form [formGroup]="filter" class="d-flex align-items-center">
+      <div class="mr-3">
+        <mat-form-field class="mat-sm" color="accent" appearance="fill">
+          <input matInput [matDatepicker]="picker1" formControlName="fromDate" [max]="today">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="mr-3">
+        <mat-form-field class="mat-sm" color="accent" appearance="fill">
+          <input matInput [matDatepicker]="picker2" formControlName="toDate" [min]="filter.value?.fromDate" [max]="today">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="">
+        <button class="btn btn-primary btn-sm" type="button" name="button" (click)="getReports()">Apply</button>
+      </div>
+      <div class="btn-group btn-group-toggle mx-3" data-toggle="buttons">
+        <label class="btn btn-sm active">
+          <input type="radio" name="options" id="option1" autocomplete="off" checked> <img src="assets/icons/grid-blue.svg" alt="">
+        </label>
+        <label class="btn btn-sm">
+          <input type="radio" name="options" id="option3" autocomplete="off"> <img src="assets/icons/pie-blue.svg" alt="">
+        </label>
+      </div>
+      <ul class="nav">
+        <li class="nav-item" (click)="exportReports()">
+          <img src="assets/icons/export.svg" alt="">
+        </li>
+        <li class="ml-2 nav-item dropdown">
+          <div class="" id="filterDropdown" (click)="filterToggle = !filterToggle">
+            <img src="assets/icons/filter.svg" alt="">
+          </div>
+
+          <div class="dropdown-menu p-3" aria-labelledby="filterDropdown" [ngClass]="{'show': filterToggle}">
+            <div class="mb-3">
+              <input class="form-control w-100" type="text" name="search" formControlName="search" placeholder="Search here...">
+            </div>
+            <div class="">
+              <ng-select [items]="channel_list" placeholder="Channel type" formControlName="channel" bindLabel="name" bindValue="value"></ng-select>
+            </div>
+            <!-- <div class="">
+              <ng-select [items]="violationTypes" placeholder="Violation Type" formControlName="violationType"></ng-select>
+            </div> -->
+          </div>
+        </li>
+      </ul>
+    </form>
+  </div>
+
+  <div class="card-body pt-0">
+    <table class="table table1 table-striped m-0">
+      <thead>
+        <tr>
+          <th>Date & Time <i class="fa fa-chevron-down ml-2 text-sm"></i></th>
+          <th>Agent ID</th>
+          <th>Agent Name</th>
+          <!-- <th>Agent Name</th> -->
+          <th>Customer Name</th>
+          <th>Customer Email</th>
+          <th>Customer Mobile</th>
+          <th>Channel</th>
+          <th>Chat Duration</th>
+          <!-- <th>Hold Time</th> -->
+          <th>Others</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let report of filteredReports | slice: ((pagination.page-1)*pagination.count): (pagination.page*pagination.count); index as i">
+          <td>{{report.chatStart | date: 'dd-MM-yyyy hh:mm a'}}</td>
+          <td>{{report.userID}}</td>
+          <td>{{report.userName || '--'}}</td>
+          <!-- <td>Agent name</td> -->
+          <td>{{report.customerName}}</td>
+          <td>{{report.email}}</td>
+          <td>{{report.phoneNumber || '--'}}</td>
+          <td>{{report.chatType}}</td>
+          <td>{{timeDiff(report.chatDate, report.chatStart)}}</td>
+          <!-- <td>{{'--'}}</td> -->
+          <td>
+            <button class="btn btn-info btn-sm mr-3" type="button" name="button" (click)="openChat(report)">Transcript</button>
+            <button class="btn btn-secondary btn-sm" type="button" name="button" (click)="openChatInfo(report)">Info</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- <div  class="h-100 d-flex align-items-center justify-content-center">
+      No Violation Reports
+    </div> -->
+  </div>
+</div>

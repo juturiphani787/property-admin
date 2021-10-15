@@ -1,0 +1,60 @@
+<div class="row m-0 h-100">
+  <div class="col-lg-6 p-0 h-100" id="banner">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+
+      <div class="p-5 m-5">
+        <div class="text-center mb-5">
+          <img class="logo-img" src="assets/logo/logo-white.webp" alt="">
+        </div>
+        <div class="py-5" id="title">
+          Property management <br> Solution
+          <!-- Work From Home <br>Solution -->
+        </div>
+        <!-- <div class="mb-5" id="sub-title">
+          Rapid Transition to a cloud contact center
+        </div> -->
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col-lg-6 p-0 h-100" id="loginFormDiv">
+    <div class="align-items-center d-flex h-100 p-5 mx-auto justify-content-center">
+      <!-- sfsfsfsfs -->
+      <div class="d-block w-100">
+        <div class="mb-5" id="title">BUENBYAHE ADMIN portal</div>
+        <h4 class="mb-4">Welcome Back!</h4>
+        <div class="mb-5">Please Login Into Your Account</div>
+        
+        <form [formGroup]="loginForm" (ngSubmit)="signIn()">
+          
+          <div class="mb-4">
+            <input type="text" formControlName="userId" class="form-control" [ngClass]="{ 'is-invalid': isSubmitted && f.userId.errors }" />
+            <div *ngIf="isSubmitted && f.userId.errors" class="invalid-feedback">
+                <div *ngIf="f.userId.errors.required">User Name is required</div>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': isSubmitted && f.password.errors }" />
+            <div *ngIf="isSubmitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+            </div>
+          </div>
+
+          <div class="">
+            <button class="btn btn-primary btn-block" type="submit"  name="button">Login</button>
+          </div>
+
+        </form>
+
+        <div id="footer" class="p-3">
+          <div class="text-sm mr-3">Powered by</div>
+          <img class="logo-img" src="assets/logo/logo-white.svg" alt="">
+          <div class="text-xs ml-auto mr-3">Terms of Use</div>
+          <div class="text-xs">Private Policy</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
